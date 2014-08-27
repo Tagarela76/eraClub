@@ -1,0 +1,28 @@
+2014/08/27 15:08:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'era_club.user' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `user`.
+in /home/developer/WorkSpace/eraClub/index.php (13)
+2014/08/27 15:08:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'era_club.era_user' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `era_user`.
+in /home/developer/WorkSpace/eraClub/index.php (13)
+2014/08/27 15:12:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'era_club.user' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `user`.
+in /home/developer/WorkSpace/eraClub/index.php (13)
+2014/08/27 15:30:17 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "validatePassword".' in /home/developer/WorkSpace/eraClub/framework/base/CComponent.php:266
+Stack trace:
+#0 /home/developer/WorkSpace/eraClub/framework/db/ar/CActiveRecord.php(227): CComponent->__call('validatePasswor...', Array)
+#1 /home/developer/WorkSpace/eraClub/protected/components/UserIdentity.php(19): CActiveRecord->__call('validatePasswor...', Array)
+#2 /home/developer/WorkSpace/eraClub/protected/components/UserIdentity.php(19): User->validatePassword('admin')
+#3 /home/developer/WorkSpace/eraClub/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#4 /home/developer/WorkSpace/eraClub/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 /home/developer/WorkSpace/eraClub/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 /home/developer/WorkSpace/eraClub/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 /home/developer/WorkSpace/eraClub/protected/controllers/SiteController.php(94): CModel->validate()
+#8 /home/developer/WorkSpace/eraClub/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#9 /home/developer/WorkSpace/eraClub/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /home/developer/WorkSpace/eraClub/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /home/developer/WorkSpace/eraClub/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/developer/WorkSpace/eraClub/framework/web/CWebApplication.php(282): CController->run('login')
+#13 /home/developer/WorkSpace/eraClub/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 /home/developer/WorkSpace/eraClub/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /home/developer/WorkSpace/eraClub/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/eraClub/index.php?r=site/login
+HTTP_REFERER=http://localhost/eraClub/index.php?r=site/login
+---
