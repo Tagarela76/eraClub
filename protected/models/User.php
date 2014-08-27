@@ -98,12 +98,25 @@ class User extends CActiveRecord
 
     public function validatePassword($password)
     {
+        //var_dump($this->hashPassword($password));
         return CPasswordHelper::verifyPassword($password, $this->password);
     }
 
     public function hashPassword($password)
     {
         return CPasswordHelper::hashPassword($password);
+    }
+
+    public function beforeSave()
+    {
+        if (parent::beforeSave()) { {
+                // for example
+                $password = $this->password;
+                $this->password = $this->hashPassword($password); 
+                return true;
+            }
+            return false;
+        }
     }
 
 }
